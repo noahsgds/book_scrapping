@@ -1,0 +1,9 @@
+services:
+  python-app:
+    build: .
+    container_name: scrapper_book.launch
+    environment:
+      - DISCORD_WEBHOOK_URL=${DISCORD_WEBHOOK_URL} # <-- Va lire le fichier .env automatiquement
+    volumes:
+      - ./data:/app/data
+      - ./src:/app/src
